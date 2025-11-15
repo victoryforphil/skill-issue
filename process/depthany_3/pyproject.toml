@@ -16,6 +16,7 @@ dependencies = [
     "einops>=0.7.0",
     "omegaconf>=2.3.0",
     "timm>=0.9.0",
+    "depth-anything-3 @ file:///home/vfp/repos/vfp/skill-issue/process/depthany_3/Depth-Anything-3",
 ]
 
 [project.scripts]
@@ -25,6 +26,9 @@ depthany-image = "depthany_3.image_demo:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.uv]
 dev-dependencies = []
