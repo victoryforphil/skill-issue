@@ -1,0 +1,21 @@
+[project]
+name = "game-collect"
+version = "0.1.0"
+description = "Game recorder for capturing window screenshots and joystick input for ML training"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mss>=9.0.1",
+    "pygame>=2.5.2",
+    "pillow>=10.1.0",
+    "pandas>=2.1.4",
+    "pyarrow>=14.0.1",
+    "numpy>=1.26.2",
+]
+
+[project.scripts]
+game-collect = "game_collect.recorder:main"
+game-viewer = "game_collect.viewer:main"
+
+[tool.setuptools]
+packages = ["game_collect"]

@@ -1,0 +1,40 @@
+# Depth Anything 3 Project Rules
+
+## Package Manager
+- This project uses UV as the package manager
+- Always use `uv run` to run Python scripts
+- Use `uv pip install` to install additional packages
+- Use `uv sync` to sync dependencies
+
+## Model Information
+- Uses Depth Anything 3 (DA3) from ByteDance-Seed
+- Supports 5 model sizes: small, base, large, giant, nested
+- Official models are hosted on Hugging Face
+- Placeholder model available for testing without downloads
+
+## Development
+- Python 3.10+ required
+- GPU (CUDA) recommended for large/giant/nested models
+- Small model works well on CPU for real-time processing
+
+## Testing
+- Run `uv run python hello.py` to verify installation
+- Run `./test_installation.sh` for full test
+- Use `--model-size small` for quick testing
+
+## API Usage
+```python
+from depthany_3.model import DepthAnything3
+model = DepthAnything3(model_size="small")
+depth = model.predict(image_rgb)  # RGB numpy array (H,W,3)
+```
+
+## CLI Usage
+```bash
+# Webcam
+uv run depthany-webcam [--model-size MODEL] [--fps-display]
+
+# Image
+uv run depthany-image IMAGE_PATH [--show] [--output OUTPUT]
+```
+
